@@ -87,16 +87,16 @@
 <meta name="description" content="在使用Java开发当中，一些非常必要的知识，它会使你的代码更加的优美。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java进阶知识">
-<meta property="og:url" content="http://yoursite.com/2016/06/18/Java进阶知识/index.html">
+<meta property="og:url" content="https://github.com/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/index.html">
 <meta property="og:site_name" content="蚂蚁">
 <meta property="og:description" content="在使用Java开发当中，一些非常必要的知识，它会使你的代码更加的优美。">
-<meta property="og:image" content="http://yoursite.com/2016/06/18/Java进阶知识/QQ20160618-0.png">
-<meta property="og:image" content="http://yoursite.com/2016/06/18/Java进阶知识/QQ20170303-154403.png">
+<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/QQ20160618-0.png">
+<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/QQ20170303-154403.png">
 <meta property="og:updated_time" content="2017-03-03T08:01:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java进阶知识">
 <meta name="twitter:description" content="在使用Java开发当中，一些非常必要的知识，它会使你的代码更加的优美。">
-<meta name="twitter:image" content="http://yoursite.com/2016/06/18/Java进阶知识/QQ20160618-0.png">
+<meta name="twitter:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/QQ20160618-0.png">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/18/Java进阶知识/"/>
+  <link rel="canonical" href="https://github.com/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/"/>
 
   <title> Java进阶知识 | 蚂蚁 </title>
 </head>
@@ -309,7 +309,7 @@
         <p>在使用Java开发当中，一些非常必要的知识，它会使你的代码更加的优美。<br><a id="more"></a></p>
 <p><strong>泛型</strong><br>简单的理解，泛型就是限制类的类型。泛型提供了类型检查，减少了数据的类型转换，同时保证了类型安全。<br>下面我们来看下栗子</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        List list =<span class="keyword">new</span> ArrayList();</span><br><span class="line">        list.add(<span class="string">"abc"</span>);</span><br><span class="line">        list.add(<span class="number">1</span>);</span><br><span class="line">        list.add(<span class="keyword">true</span>);</span><br><span class="line">        list.add(<span class="keyword">new</span> Object());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println((String)object);</span><br><span class="line">            &#125;<span class="keyword">catch</span> (ClassCastException e)&#123;</span><br><span class="line">                System.out.println(<span class="string">"类型不对:"</span>+object.getClass());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2016/06/18/Java进阶知识/QQ20160618-0.png" alt=""></p>
+<p><img src="/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/QQ20160618-0.png" alt=""></p>
 <p>可以List的<code>add()</code>方法默认是任意类型的数据，这样的话我们如果需要统一类型的话，我们添加数据的时候需要非常严谨。 因为我们即使添加了不同类型编译器也不会返回任何提醒。 而且当我们拿到数据的时候需要做强制转换。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//添加泛型</span></span><br><span class="line">        List&lt;String&gt; list =<span class="keyword">new</span> ArrayList();</span><br><span class="line">        list.add(<span class="string">"aa"</span>);</span><br><span class="line">        list.add(<span class="string">"bb"</span>);</span><br><span class="line">        list.add(<span class="string">"cc"</span>);</span><br><span class="line">        <span class="comment">//添加其他类型编译器报错</span></span><br><span class="line">        list.add(<span class="number">123</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String s : list) &#123;</span><br><span class="line">            System.out.print(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>明显可以看出泛型的最主要的优点就是让编译器追踪参数类型。Java类库中又很多使用的了泛型。例如整个集合框架，都被修改为泛型了。</p>
@@ -391,7 +391,7 @@
 </tbody>
 </table>
 <p>其实日常使用当中我们几乎没有使用到自定义注解，但是有时候有些小技巧还是很有用的。例如Android当中不建议使用枚举，因为内存开销比较大，这个时候我们可以利用注解提到枚举，利用support包中<code>@IntDef</code>。</p>
-<p>//不知为何，插入代码快导致hexo出问题<br><img src="/2016/06/18/Java进阶知识/QQ20170303-154403.png" alt=""></p>
+<p>//不知为何，插入代码快导致hexo出问题<br><img src="/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/QQ20170303-154403.png" alt=""></p>
 <p>一般使用注解的时候都需要定义注解解析器，我们通过反射来得到注解的信息，再实现注解的逻辑。</p>
 
       
@@ -454,7 +454,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/06/18/Java进阶知识/"
-           data-title="Java进阶知识" data-url="http://yoursite.com/2016/06/18/Java进阶知识/">
+           data-title="Java进阶知识" data-url="https://github.com/yugai/yugai.github.io/blob/master/2016/06/18/Java进阶知识/">
       </div>
     
   </div>
