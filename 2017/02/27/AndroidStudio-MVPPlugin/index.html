@@ -1,404 +1,628 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>AndroidStudio MVPPlugin | 蚂蚁</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MVPPlugin插件前言从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。地址">
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="MVPPlugin插件前言从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AndroidStudio MVPPlugin">
-<meta property="og:url" content="https://github.com/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/index.html">
+<meta property="og:url" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/index.html">
 <meta property="og:site_name" content="蚂蚁">
 <meta property="og:description" content="MVPPlugin插件前言从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。地址">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303-090539.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-111034.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112703.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113023.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112744.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113145.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115225.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115359.png">
-<meta property="og:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115347.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303-090539.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-111034.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112703.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113023.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112744.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113145.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115225.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115359.png">
+<meta property="og:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115347.png">
 <meta property="og:updated_time" content="2017-03-03T08:24:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio MVPPlugin">
 <meta name="twitter:description" content="MVPPlugin插件前言从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。地址">
-<meta name="twitter:image" content="https://github.com/yugai/yugai.github.io/blob/master/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png">
-  
-    <link rel="alternative" href="/atom.xml" title="蚂蚁" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6262178932196378000,
+      author: '喻改'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/"/>
+
+  <title> AndroidStudio MVPPlugin | 蚂蚁 </title>
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://avatars1.githubusercontent.com/u/8723944?v=3&amp;s=460" class="js-avatar">
-			
-		</a>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">蚂蚁</a></h1>
-		</hgroup>
+  
 
-		
-		<p class="header-subtitle">菜鸟程序员</p>
-		
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/essay">随笔</a></li>
-				        
-							<li><a href="/code">编程</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/yugai" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-					        
-								<a class="rss" target="_blank" href="#" title="rss">rss</a>
-					        
-								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-					        
-								<a class="mail" target="_blank" href="/784787081@qq.com" title="mail">mail</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://itangqi.me">汤奇同学</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.csdn.net/lmj623565791">hongyang</a>
-			        
-			        </div>
-				</section>
-				
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">爱吃爱玩，爱游戏。 我就是我，是颜色不一样的烟火。</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">蚂蚁</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">菜鸟程序员</p>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">蚂蚁</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="https://avatars1.githubusercontent.com/u/8723944?v=3&amp;s=460" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">蚂蚁</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">菜鸟程序员</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/essay">随笔</a></li>
-		        
-					<li><a href="/code">编程</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/yugai" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss">rss</a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-			        
-						<a class="mail" target="_blank" href="/784787081@qq.com" title="mail">mail</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-      <div class="body-wrap"><article id="post-AndroidStudio-MVPPlugin" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/27/AndroidStudio-MVPPlugin/" class="article-date">
-  	<time datetime="2017-02-27T01:41:11.000Z" itemprop="datePublished">2017-02-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+
   
-    <h1 class="article-title" itemprop="name">
-      AndroidStudio MVPPlugin
-    </h1>
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AndroidStudio MVPPlugin
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-27T09:41:11+08:00" content="2017-02-27">
+              2017-02-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/27/AndroidStudio-MVPPlugin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/27/AndroidStudio-MVPPlugin/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1 id="MVPPlugin插件"><a href="#MVPPlugin插件" class="headerlink" title="MVPPlugin插件"></a>MVPPlugin插件</h1><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。<a href="https://github.com/yugai/MVPPlugin">地址</a><br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png" alt=""><br><a id="more"></a></p>
+      
+
+      
+        <h1 id="MVPPlugin插件"><a href="#MVPPlugin插件" class="headerlink" title="MVPPlugin插件"></a>MVPPlugin插件</h1><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>从Google推出官方MVP架构demo到现在大概有一年多的时间了，半年前大概在所有的Android技术社区都有提到MVP架构，现在关于MVP架构的话题似乎没有以前那么多了，可能是因为大家都已经能够熟练的使用MVP了。在这里先炒碗闲饭，提供了一个快速生成MVP模式的插件。<a href="https://github.com/yugai/MVPPlugin" target="_blank" rel="external">地址</a><br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303.png" alt=""><br><a id="more"></a></p>
 <h5 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h5><p>关于MVP模式，我自己也使用了很久，实际使用中还是存在很多缺点的。例如一个很简的<code>activity</code>我们就需要去新建多个类，每个操作之间还需要通过接口回调的方式。虽然逻辑变得更加的清晰了，但随之而来的是代码量变得更大。</p>
 <h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p>那么有没有什么办法使MVP模式变得更简洁，能够更快速的使用呢？其实大家一般的都会利用泛型封装一下MVP的base类，通过泛型所提供的类型去实例化<code>View</code>层和<code>Presenter</code>层，在继承封装好的基类中可以快速的使用MVP模式。这是的确是极大的提高了使用效率。但是无法避免的是我们在新建任意一个<code>activity</code>的时候都要去新建P层和V层。而且通过泛型约束了之后，导致了我们在继承的时候需要填写多个泛型值。这样的操作无疑相当繁琐，而且无趣的。后来在几经思考下，我决定将MVP的模板代码提取出来，通过插件自动生成那些简单而又不得不做的操作。</p>
 <h5 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h5><p>你如果现在还没有学习MVP模式，或者你还没有熟练的使用MVP模式，这个将是你最快使用MVP模式的方式。因为你可能根本就不需要了解如何去搭建一个MVP的架构，只需要去在每一个层级去做好该做的职责就行了。<br>如果你已经使用过MVP架构的话，其中使用时候的痛楚应该不用多说了。每次在新建一个页面的时候都需要进行重复的操作，这个插件能快速帮你生成一个简单模板。</p>
 <h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><p>在使用插件的时候，需要生成一个mvp的文件夹，其中封装了MVP的架构，你可以根据自己需求去增加各种操作，但是请不要删除里面的关键代码。注意请先生成mvp的目录再去创建别的MVP架构的界面。<br>页面一般分为<code>activity</code>和<code>fragment</code>，在新建一个<code>activity</code>的时候你可以直接写类名就好了。例如你再新建页面的时候填入login，插件会自动帮你生成login的文件夹，其中包含LoginActivity,LoginContract,LoginPresenter文件。如果你要是需要生成一个<code>fragment</code>在新建页面的时候，需要填写loginfragment这时候插件也会帮你生成一个login文件夹，只不过LoginActivity变成了LoginFragment。那么你应该知道了，需要创建<code>fragment</code>的时候需要以fragment结尾，当然你也可以以<code>activity</code>结尾，效果和默认的不写的一样。<br>每次创建文件夹的时候，可能读写的速度有点慢，请等待2s左右。有时候创建完了后AndroidStudio并不会自动刷新文件夹，这时候你点击下文件夹收缩再展开就好了。</p>
-<h5 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h5><p>1.请先搜索安装MVPPlugin插件。还可以通过我的github中找到插件的jar包，从本地安装。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303-090539.png" alt=""></p>
-<p>2.在安装完毕后，在任意文件夹下点击新建都会显示一个MVPFile的选项。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-111034.png" alt=""></p>
-<p>3.首先我们需要生成一个叫做mvp的文件夹，直接点击MVPFile选项，输入mvp即可。一定要先生成这个。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112703.png" alt=""></p>
-<p>4.这时候我们就可以新建页面了，比如我们要新建一个登陆页面，这时候就可以输入login，如果我们需要的是一个<code>fragment</code>，就在后缀添加fragment便行。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113023.png" alt=""><br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112744.png" alt=""></p>
-<p>5.这个时候一个页面也就完成就绪，例如我们需要实现一个登陆的功能，在LoginContract中View接口中编写成功和失败的回调，在Presenter接口中编写登陆调用的接口。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113145.png" alt=""><br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115225.png" alt=""></p>
-<p>6.这时候<code>Activity</code>和<code>Presenter</code>层都会提示错误，需要实现回调方法，我们按alt+enter好了。在<code>Activity</code>中已经持有<code>Presenter</code>对象，反之在<code>Presenter</code>也存在<code>View</code>的对象，它们的名字叫mPresenter和mView。（是不是感觉有点神奇？可以自己去看看泛型的实例化，其中有个<code>getInstance()</code>方法算是淫技吧）。之后我们就可套路来做就行了。<br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115359.png" alt=""><br><img src="/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115347.png" alt=""></p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>好了，这样看起来是不是逻辑很清楚了？妈妈再也不用担心你使用MVP模式了。实际中我们需要根据自己的需求去修改一下MVP的base类，例如我们每个页面都有加载，就可以在BaseView中添加，加载中，加载成功和加载失败的回调，总之一切的自定义取决于你自己。说了这么多，如果还有朋友不理解怎么使用的话可以去看看我之前的<a href="https://github.com/yugai/DouYu-Android">开源项目</a>,这个设计架构也是从中提取出来的。如果没有了解过MVP架构的也可以参见Google推出实例<a href="https://github.com/googlesamples/android-architecture">项目</a></p>
+<h5 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h5><p>1.请先搜索安装MVPPlugin插件。还可以通过我的github中找到插件的jar包，从本地安装。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170303-090539.png" alt=""></p>
+<p>2.在安装完毕后，在任意文件夹下点击新建都会显示一个MVPFile的选项。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-111034.png" alt=""></p>
+<p>3.首先我们需要生成一个叫做mvp的文件夹，直接点击MVPFile选项，输入mvp即可。一定要先生成这个。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112703.png" alt=""></p>
+<p>4.这时候我们就可以新建页面了，比如我们要新建一个登陆页面，这时候就可以输入login，如果我们需要的是一个<code>fragment</code>，就在后缀添加fragment便行。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113023.png" alt=""><br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-112744.png" alt=""></p>
+<p>5.这个时候一个页面也就完成就绪，例如我们需要实现一个登陆的功能，在LoginContract中View接口中编写成功和失败的回调，在Presenter接口中编写登陆调用的接口。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-113145.png" alt=""><br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115225.png" alt=""></p>
+<p>6.这时候<code>Activity</code>和<code>Presenter</code>层都会提示错误，需要实现回调方法，我们按alt+enter好了。在<code>Activity</code>中已经持有<code>Presenter</code>对象，反之在<code>Presenter</code>也存在<code>View</code>的对象，它们的名字叫mPresenter和mView。（是不是感觉有点神奇？可以自己去看看泛型的实例化，其中有个<code>getInstance()</code>方法算是淫技吧）。之后我们就可套路来做就行了。<br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115359.png" alt=""><br><img src="/2017/02/27/AndroidStudio-MVPPlugin/QQ20170227-115347.png" alt=""></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>好了，这样看起来是不是逻辑很清楚了？妈妈再也不用担心你使用MVP模式了。实际中我们需要根据自己的需求去修改一下MVP的base类，例如我们每个页面都有加载，就可以在BaseView中添加，加载中，加载成功和加载失败的回调，总之一切的自定义取决于你自己。说了这么多，如果还有朋友不理解怎么使用的话可以去看看我之前的<a href="https://github.com/yugai/DouYu-Android" target="_blank" rel="external">开源项目</a>,这个设计架构也是从中提取出来的。如果没有了解过MVP架构的也可以参见Google推出实例<a href="https://github.com/googlesamples/android-architecture" target="_blank" rel="external">项目</a></p>
 <h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p>由于本人最近想换一份工作，so 你懂得。<br>简单写下工作经验吧，从事Android开发3年了，其中上线应用5个，比较熟悉的是Android开发，但是在工作过程中接触很多其他的知识，会一些Java WEB，会一些IOS，会一些React Native。当然工作的方向只有其中之一，由于希望能接触更多的领域，所以目前寻求一份React Native(当然能够完成项目，能使用redux架构)或者Android工作，希望大家能够推荐或者直接联系我。<br>工作要求：希望在武汉工作，工资10K以上，正常福利待遇，公司最好有一定的规模。<br>🙏🙏🙏<br>联系邮箱：784787081@qq.com</p>
 
       
     </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2017/02/14/page斗鱼/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">制作斗鱼移动端</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
 
-  
-</article>
+    <div>
+      
+        
+      
+    </div>
 
+    <div>
+      
+        
 
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
+      
+    </div>
 
+    <footer class="post-footer">
+      
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/14/page斗鱼/" rel="next" title="制作斗鱼移动端">
+                <i class="fa fa-chevron-left"></i> 制作斗鱼移动端
+              </a>
+            
+          </div>
 
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-<div class="share_addthis">
-  <div class="sharing addthis_toolbox share">
-    <a class="addthis_button_facebook_like"></a>
-    <a class="addthis_button_tweet"></a>
-    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
-</div>
+      
+      
+    </footer>
+  </article>
 
 
 
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="AndroidStudio-MVPPlugin" data-title="AndroidStudio MVPPlugin" data-url="https://github.com/yugai/yugai.github.io/blob/master/2017/02/27/AndroidStudio-MVPPlugin/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2017 蚂蚁
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+    <div class="post-spread">
+      
     </div>
   </div>
-</footer>
-    </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
+      <div class="ds-thread" data-thread-key="2017/02/27/AndroidStudio-MVPPlugin/"
+           data-title="AndroidStudio MVPPlugin" data-url="http://yoururl.com/2017/02/27/AndroidStudio-MVPPlugin/">
+      </div>
+    
   </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/8723944?v=3&s=460"
+               alt="蚂蚁" />
+          <p class="site-author-name" itemprop="name">蚂蚁</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yugai" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MVPPlugin插件"><span class="nav-number">1.</span> <span class="nav-text">MVPPlugin插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前言"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#弊端"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">弊端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决的问题"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">解决的问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意事项"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用步骤"><span class="nav-number">1.0.0.0.6.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">1.0.0.0.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附加"><span class="nav-number">1.1.</span> <span class="nav-text">附加</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蚂蚁</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yugai"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
 </body>
 </html>
