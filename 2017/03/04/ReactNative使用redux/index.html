@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,ReactNative,IOS,开源项目," />
+  <meta name="keywords" content="ReactNative,redux," />
 
 
 
@@ -84,18 +84,25 @@
 
 
 
-<meta name="description" content="在过年期间写几个模仿斗鱼直播的小项目，下面来分享一下效果。">
+<meta name="description" content="在网上有着许多关于redux的教程，由于自己本身接触ReactNative的时间也不久，使用过程中也没有什么特别复杂的场景，所以并不知道其中利端。但是在阮一峰的教程中有关于说明redux的使用场景，当然既然要学习React想必redux知识是必不可少的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="制作斗鱼移动端">
-<meta property="og:url" content="http://yoururl.com/2017/02/14/page斗鱼/index.html">
+<meta property="og:title" content="ReactNative使用redux">
+<meta property="og:url" content="http://yoururl.com/2017/03/04/ReactNative使用redux/index.html">
 <meta property="og:site_name" content="蚂蚁">
-<meta property="og:description" content="在过年期间写几个模仿斗鱼直播的小项目，下面来分享一下效果。">
-<meta property="og:image" content="http://yoururl.com/2017/02/14/page斗鱼/20160907113540833.png">
-<meta property="og:updated_time" content="2017-03-03T08:44:38.000Z">
+<meta property="og:description" content="在网上有着许多关于redux的教程，由于自己本身接触ReactNative的时间也不久，使用过程中也没有什么特别复杂的场景，所以并不知道其中利端。但是在阮一峰的教程中有关于说明redux的使用场景，当然既然要学习React想必redux知识是必不可少的。">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/a044ad345982b2b79bc7177738adcbef76099b2c.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/6a600c338744ebf83681478cd0f9d72a6159a794.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-010937.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-011150.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-011415.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-011441.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-011659.png">
+<meta property="og:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/QQ20170306-011808.png">
+<meta property="og:updated_time" content="2017-03-05T17:36:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="制作斗鱼移动端">
-<meta name="twitter:description" content="在过年期间写几个模仿斗鱼直播的小项目，下面来分享一下效果。">
-<meta name="twitter:image" content="http://yoururl.com/2017/02/14/page斗鱼/20160907113540833.png">
+<meta name="twitter:title" content="ReactNative使用redux">
+<meta name="twitter:description" content="在网上有着许多关于redux的教程，由于自己本身接触ReactNative的时间也不久，使用过程中也没有什么特别复杂的场景，所以并不知道其中利端。但是在阮一峰的教程中有关于说明redux的使用场景，当然既然要学习React想必redux知识是必不可少的。">
+<meta name="twitter:image" content="http://yoururl.com/2017/03/04/ReactNative使用redux/a044ad345982b2b79bc7177738adcbef76099b2c.png">
 
 
 
@@ -116,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://yoururl.com/2017/02/14/page斗鱼/"/>
+  <link rel="canonical" href="http://yoururl.com/2017/03/04/ReactNative使用redux/"/>
 
-  <title> 制作斗鱼移动端 | 蚂蚁 </title>
+  <title> ReactNative使用redux | 蚂蚁 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +265,7 @@
             
             
               
-                制作斗鱼移动端
+                ReactNative使用redux
               
             
           </h1>
@@ -270,8 +277,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-14T15:25:00+08:00" content="2017-02-14">
-              2017-02-14
+            <time itemprop="dateCreated" datetime="2017-03-04T16:19:52+08:00" content="2017-03-04">
+              2017-03-04
             </time>
           </span>
 
@@ -300,8 +307,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/14/page斗鱼/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/page斗鱼/" itemprop="commentsCount"></span>
+                <a href="/2017/03/04/ReactNative使用redux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/04/ReactNative使用redux/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -324,57 +331,21 @@
       
 
       
-        <p>在过年期间写几个模仿斗鱼直播的小项目，下面来分享一下效果。<br><img src="/2017/02/14/page斗鱼/20160907113540833.png" alt=""><br><a id="more"></a></p>
-<p><em>感谢github上的开源作者</em></p>
-<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p>由于自己目前从事的就是android开发工作，所以才用的一些第三方库和架构基本都是目前最流行的。在制作过程中遇到了一些之前没有接触过的东西，感谢那些在github上分享的作者，让自己很容易完成了第一个直播项目。<br><a href="https://github.com/yugai/DouYu-Android" target="_blank" rel="external">斗鱼android地址</a></p>
-<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
-<li>遵循Material Design</li>
-<li>获取斗鱼，熊猫，虎牙直播数据</li>
-<li>可以观看斗鱼和熊猫直播</li>
-<li>可以观看斗鱼弹幕</li>
-<li>仿斗鱼悬浮框</li>
-<li>支持三星和android7.0的分屏操作</li>
-<li>等等</li>
+        <p>在网上有着许多关于<code>redux</code>的教程，由于自己本身接触ReactNative的时间也不久，使用过程中也没有什么特别复杂的场景，所以并不知道其中利端。但是在阮一峰的教程中有关于说明<code>redux</code>的<a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html" target="_blank" rel="external">使用场景</a>，当然既然要学习React想必<code>redux</code>知识是必不可少的。<br><img src="/2017/03/04/ReactNative使用redux/a044ad345982b2b79bc7177738adcbef76099b2c.png" alt=""><br><a id="more"></a></p>
+<h5 id="redux简介"><a href="#redux简介" class="headerlink" title="redux简介"></a>redux简介</h5><p>redux其实简单的来说就是用来管理这个应用的数据状态，在使用redux后再也不需要去操作<code>state</code>去改变状态了，整个数据来源将流向<code>store</code>管理,每一次执行一个动作都通过发出<code>action</code>来改变<code>state</code>。当使用过redux后会发现，其实redux不仅仅是一个类库，它还是一个程序的设计架构，使用redux后所有的操作都会变成链式。有一篇非常好的理解redux的文章 <a href="https://github.com/jasonslyvia/a-cartoon-intro-to-redux-cn" target="_blank" rel="external">不写一行代码，轻松看懂 Redux 原理</a></p>
+<h5 id="redux机制"><a href="#redux机制" class="headerlink" title="redux机制"></a>redux机制</h5><p>redux的三个重要的模块，也是这几个元素组成了redux架构。</p>
+<ul>
+<li>action 一个响应动作的发生</li>
+<li>reducer 处理不同的动作，来生成新的<code>state</code></li>
+<li>store 存储整个状态机</li>
 </ul>
-<h6 id="待完成"><a href="#待完成" class="headerlink" title="待完成"></a>待完成</h6><ul>
-<li>设计一套精美的ui</li>
-<li>补充虎牙直播</li>
-<li>等等</li>
-</ul>
-<iframe height="498" width="510" src="http://player.youku.com/embed/XMjUxMTY2OTU0NA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-
-
-<h1 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h1><p>在自己工作后不久便自学了swift，也曾写过一些独立的小型项目。这次也一样纯属拿出来练手免得以至于荒废。在项目中大部分的ui代码来自于==小码哥==，因为感觉写ui太费劲了，而且没有意思。自己添加了部分接口，并按照网上的教程集成<code>ijkplayer</code>。</p>
-<p><em>由于github上传限制大小，项目超过100m以上的开源项目不能上传，所以这里没有地址</em></p>
-<h3 id="基本功能-1"><a href="#基本功能-1" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
-<li>仿斗鱼app的UI</li>
-<li>获取斗鱼直播数据</li>
-<li>完成首页和个人中心（其他模块未写）</li>
-<li>可以观看直播（没有弹幕）</li>
-<li>等等</li>
-</ul>
-<iframe height="498" width="510" src="http://player.youku.com/embed/XMjUxMTY3MTI1Ng==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-
-<h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>rn刚推出就使人眼前一亮，解决了跨平台和热更新两大问题。推出后一阵子我就开始学习了，因为有着双平台开发经验所以写写入门demo并不是很难。这个项目主要模仿了斗鱼ui界面，并不提供直播功能。后续会把直播加上去<br><a href="https://github.com/yugai/DouYu-RN" target="_blank" rel="external">斗鱼RN地址</a></p>
-<h3 id="基本功能-2"><a href="#基本功能-2" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
-<li>仿斗鱼app的UI</li>
-<li>获取斗鱼直播数据</li>
-<li>兼容ios和android</li>
-<li>等等</li>
-</ul>
-<h6 id="待完成-1"><a href="#待完成-1" class="headerlink" title="待完成"></a>待完成</h6><ul>
-<li>将细节补充完整</li>
-<li>添加直播库<a href="https://github.com/buhe/react-native-pili" target="_blank" rel="external">https://github.com/buhe/react-native-pili</a></li>
-<li>等等</li>
-</ul>
-<iframe height="498" width="510" src="http://player.youku.com/embed/XMjUxMTY3MjA4OA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-
-
-
-
+<p>简单的描述一下我所理解的redux运行流程，首先用户发出一个动作，这个时候我们就会预先定义好一个<code>action</code>，然后根据动作的类型发出不同的<code>action</code>。一个<code>action</code>只提供用户动作的行为，并不提供处理逻辑。发出一个<code>action</code>必须得通过<code>store</code>提供<code>dispatch(action)</code>方法，在<code>store</code>收到一个<code>action</code>便会扔给<code>reducer</code>来处理这个事件，在<code>reducer</code>处理完逻辑后会返回给<code>store</code>新的<code>state</code>。之前提到过<code>store</code>是用来存储所有的状态机的，所以<code>state</code>改变了，相应的页面也会刷新。<br><img src="/2017/03/04/ReactNative使用redux/6a600c338744ebf83681478cd0f9d72a6159a794.png" alt=""></p>
+<h5 id="redux使用"><a href="#redux使用" class="headerlink" title="redux使用"></a>redux使用</h5><p>上面讲了所有的运行原理，现在关键点在于如何让一个组件绑定到<code>store</code>中去。这个时候就需要使用到<em>react-redux</em>这个库了，它作用在于提供<code>Provider</code>和<code>connect</code>两个重要的模块。<br><code>Provider</code>是一个常规的组件，需要将<code>Provider</code>作为所有组件的顶点，也是说所有组件都是包裹在其中。它的工作很简单，就是接受redux的<code>store</code>作为<code>props</code>。<br><code>connect</code>便是链接redux和React的纽扣，组件连接到redux需要使用<code>connect(select)(App)</code>。其中<code>select</code>用于提供绑定需要的数据，<code>App</code>即是需要绑定的页面。<br>做好以上两个步骤,React和redux就已经绑定起来了，这个时候就可以使用<code>store</code>来作为统一的数据流了。</p>
+<h5 id="redux案例"><a href="#redux案例" class="headerlink" title="redux案例"></a>redux案例</h5><p>下面用所述的内容来做一个简单的Demo，简单的建立好两个普通的<code>action</code>，一个是登陆动作，一个是监听输入框。</p>
+<h6 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h6><p>绑定根组件<code>Provider</code><br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-010937.png" alt=""></p>
+<h6 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h6><p>创建<code>store</code>,<code>action</code>,<code>reducer</code><br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-011150.png" alt=""><br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-011415.png" alt=""><br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-011441.png" alt=""></p>
+<h6 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h6><p>将页面映射到redux<br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-011659.png" alt=""><br><img src="/2017/03/04/ReactNative使用redux/QQ20170306-011808.png" alt=""></p>
+<p>上面几步，基本搭建好一个redux的框架，但是似乎不是太好表述清楚所有的细节。所以把源码放在<a href="https://github.com/yugai/ReduxTest" target="_blank" rel="external">这里</a></p>
 
       
     </div>
@@ -396,13 +367,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
             <a href="/tags/ReactNative/" rel="tag">#ReactNative</a>
           
-            <a href="/tags/IOS/" rel="tag">#IOS</a>
-          
-            <a href="/tags/开源项目/" rel="tag">#开源项目</a>
+            <a href="/tags/redux/" rel="tag">#redux</a>
           
         </div>
       
@@ -411,17 +378,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/18/Java进阶知识/" rel="next" title="Java进阶知识">
-                <i class="fa fa-chevron-left"></i> Java进阶知识
+              <a href="/2017/03/03/ReactNative使用flex布局/" rel="next" title="ReactNative使用flex布局">
+                <i class="fa fa-chevron-left"></i> ReactNative使用flex布局
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/27/AndroidStudio-MVPPlugin/" rel="prev" title="AndroidStudio MVPPlugin">
-                AndroidStudio MVPPlugin <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -447,8 +410,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/14/page斗鱼/"
-           data-title="制作斗鱼移动端" data-url="http://yoururl.com/2017/02/14/page斗鱼/">
+      <div class="ds-thread" data-thread-key="2017/03/04/ReactNative使用redux/"
+           data-title="ReactNative使用redux" data-url="http://yoururl.com/2017/03/04/ReactNative使用redux/">
       </div>
     
   </div>
@@ -550,7 +513,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android"><span class="nav-number">1.</span> <span class="nav-text">Android</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本功能"><span class="nav-number">1.0.1.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#待完成"><span class="nav-number">1.0.1.0.0.1.</span> <span class="nav-text">待完成</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本功能-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native"><span class="nav-number">3.</span> <span class="nav-text">React Native</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本功能-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#待完成-1"><span class="nav-number">3.0.1.0.0.1.</span> <span class="nav-text">待完成</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#redux简介"><span class="nav-number">1.</span> <span class="nav-text">redux简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redux机制"><span class="nav-number">2.</span> <span class="nav-text">redux机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redux使用"><span class="nav-number">3.</span> <span class="nav-text">redux使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redux案例"><span class="nav-number">4.</span> <span class="nav-text">redux案例</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#第一步"><span class="nav-number">4.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第二步"><span class="nav-number">4.2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第三步"><span class="nav-number">4.3.</span> <span class="nav-text">第三步</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
